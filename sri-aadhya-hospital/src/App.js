@@ -1,0 +1,22 @@
+import { motion, useScroll, useSpring } from "framer-motion";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import TrustStrip from "./components/TrustStrip";
+import About from "./components/About";
+import Specialities from "./components/Specialities";
+import Services from "./components/Services";
+import Insurance from "./components/Insurance";
+import Doctors from "./components/Doctors";
+import Facilities from "./components/Facilities";
+import Gallery from "./components/Gallery";
+import Manifesto from "./components/Manifesto";
+import Reviews from "./components/Reviews";
+import OnlinePresence from "./components/OnlinePresence";
+import Location from "./components/Location";
+import Appointment from "./components/Appointment";
+import Footer from "./components/Footer";
+import FloatingContact from "./components/FloatingContact";
+import AppointmentModal from "./components/AppointmentModal";
+import { AppointmentProvider } from "./components/appointment-context";
+import useLenis from "./hooks/useLenis";
+export default function App(){useLenis();const{scrollYProgress}=useScroll();const scaleX=useSpring(scrollYProgress,{stiffness:140,damping:30,mass:.4});return <AppointmentProvider><div className="min-h-screen bg-white font-sans text-slate-900 antialiased"><motion.div aria-hidden="true" style={{scaleX}} className="fixed inset-x-0 top-0 z-[60] h-0.5 origin-left bg-teal-600"/><Navbar/><main><Hero/><TrustStrip/><About/><Specialities/><Services/><Insurance/><Doctors/><Facilities/><Gallery/><Manifesto/><Reviews/><OnlinePresence/><Location/><Appointment/></main><Footer/><FloatingContact/><AppointmentModal/></div></AppointmentProvider>}

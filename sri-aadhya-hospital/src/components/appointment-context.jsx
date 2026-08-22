@@ -1,0 +1,1 @@
+import { createContext,useContext,useState } from 'react';const C=createContext(null);export function AppointmentProvider({children}){const [open,setOpen]=useState(false);return <C.Provider value={{open,openAppointment:()=>setOpen(true),closeAppointment:()=>setOpen(false)}}>{children}</C.Provider>}export function useAppointment(){return useContext(C)}
